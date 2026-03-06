@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Poneta Recipes</title>
+<meta name="description" content="Recipes from the Poneta Pasta & Gelato Cooking Class in Tuscany. Download the recipes and share your experience.">
+<link rel="icon" href="assets/Logo_poneta.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- BODY & BACKGROUND ---------- */
+body {
+    margin: 0;
+    font-family: Lato, sans-serif;
+    background: #f4ead2;
+    color: #2c2c2c;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* parchment texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* ---------- LANDSCAPE & PARALLAX ---------- */
+.landscape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.28;
+    transition: transform 0.2s ease-out;
+}
+
+/* ---------- CONTAINER & LOGO ---------- */
+.container {
+    max-width: 640px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.logo {
+    width: 230px;
+    margin-bottom: 10px;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1 {
+    font-family: Lato, sans-serif; /* più moderno e sottile */
+    font-weight: 300;               /* leggero */
+    font-size: 36px;
+    margin: 8px 0 12px 0;
+}
+
+.subtitle {
+    color: #6e5c45;
+    margin-bottom: 30px;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    margin-top: 30px;
+}
+
+.section-title {
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #6e5c45;
+    margin-bottom: 6px;
+}
+
+/* ---------- BUTTONS WITH GRADIENTS ---------- */
+.button {
+    display: block;
+    text-decoration: none;
+    padding: 17px;
+    margin: 15px 0;
+    border-radius: 10px;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect */
+.button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Gradient backgrounds */
+.download {
+    background: linear-gradient(135deg, #7a5a38, #a87c5a);
+    color: white;
+}
+
+.review {
+    background: linear-gradient(135deg, #324233, #4a5048);
+    color: white;
+}
+
+.paypal {
+    background: linear-gradient(135deg, #caa56a, #e0cfa2);
+    color: #2b2b2b;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    margin-top: 45px;
+    font-size: 12px;
+    color: #7a6d57;
+    line-height: 1.5;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Tuscan landscape -->
+<svg class="landscape" viewBox="0 0 1200 260">
+<path d="M0 180 Q300 120 600 180 T1200 180" stroke="#bda883" stroke-width="3" fill="none"/>
+<path d="M0 200 Q250 150 550 200 T1200 200" stroke="#c8b38d" stroke-width="2" fill="none"/>
+<path d="M320 180 C315 160 318 130 320 100 C322 130 325 160 320 180" stroke="#8f7b54" stroke-width="4" fill="none"/>
+<path d="M350 180 C345 165 348 140 350 110 C352 140 355 165 350 180" stroke="#8f7b54" stroke-width="4" fill="none"/>
+<path d="M850 180 C845 160 848 130 850 100 C852 130 855 160 850 180" stroke="#8f7b54" stroke-width="4" fill="none"/>
+<path d="M880 180 C875 165 878 140 880 110 C882 140 885 165 880 180" stroke="#8f7b54" stroke-width="4" fill="none"/>
+</svg>
+
+<div class="container">
+<img src="assets/Logo_poneta.png" class="logo">
+<h1>Recipes</h1>
+<p class="subtitle">
+Grazie for cooking with us in Tuscany
+</p>
+
+<div class="section">
+<a class="button download" href="Recipes_poneta.pdf#toolbar=0">Download the Recipes (PDF)</a>
+</div>
+
+<div class="section">
+<div class="section-title">Enjoyed the class?</div>
+<a class="button review" href="https://search.google.com/local/writereview?placeid=ChIJhTuifko5KhMRALn6UV6Hcys">⭐ Leave a quick review</a>
+<a class="button paypal" href="https://paypal.me/firuzabadi">🍝 Buy the chef a pasta</a>
+</div>
+
+<div class="footer">
+<p>
+This page provides recipes shared during the cooking class at Borgo Poneta.
+No personal data is collected or stored through this website. External links
+such as Google Reviews and PayPal may process data according to their own
+privacy policies.
+</p>
+</div>
+</div>
+
+<script>
+// ---------- PARALLAX EFFECT ----------
+const landscape = document.querySelector('.landscape');
+window.addEventListener('scroll', () => {
+    const offset = window.scrollY;
+    landscape.style.transform = `translateY(${offset * 0.15}px)`;
+});
+</script>
+
+</body>
+</html>
