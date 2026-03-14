@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tip the Chef – Poneta Recipes</title>
+
+<link rel="icon" href="assets/Logo_poneta.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Lato,sans-serif;
+background:#f4ead2;
+color:#2c2c2c;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* Stile per il paesaggio */
+.landscape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.28;
+    z-index: -1;
+    pointer-events: none;
+    transition: transform 0.2s ease-out; /* Per rendere il movimento fluido */
+}
+
+.container{
+max-width:640px;
+margin:auto;
+padding:60px 20px;
+position: relative;
+z-index: 1;
+}
+
+.logo{
+width:200px;
+margin-bottom:5px;
+}
+
+h1{
+font-weight:300;
+font-size:36px;
+margin:8px 0 12px;
+}
+
+/* buttons */
+
+.button{
+display:block;
+text-decoration:none;
+padding:17px;
+margin:20px 0;
+border-radius:10px;
+font-size:17px;
+transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.button:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.tip20{
+background:linear-gradient(135deg,#7a5a38,#a87c5a);
+color:white;
+font-weight:600;
+transform: scale(1.03);
+}
+
+.tip40{
+background:linear-gradient(135deg,#324233,#4a5048);
+color:white;
+}
+
+.tipfree{
+background:linear-gradient(135deg,#caa56a,#e0cfa2);
+color:#2b2b2b;
+}
+
+.tip10{
+background:linear-gradient(135deg,#d6c39d,#e6d2ad);
+color:#2b2b2b;
+}
+
+.back{
+margin-top:30px;
+font-size:14px;
+}
+
+.back a {
+    color: #5f503d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer{
+margin-top:45px;
+font-size:12px;
+color:#7a6d57;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<svg class="landscape" viewBox="0 0 1200 260">
+    <path d="M0 180 Q300 120 600 180 T1200 180" stroke="#bda883" stroke-width="3" fill="none"/>
+    <path d="M0 200 Q250 150 550 200 T1200 200" stroke="#c8b38d" stroke-width="2" fill="none"/>
+    <path d="M320 180 C315 160 318 130 320 100 C322 130 325 160 320 180" stroke="#8f7b54" stroke-width="4" fill="none"/>
+    <path d="M350 180 C345 165 348 140 350 110 C352 140 355 165 350 180" stroke="#8f7b54" stroke-width="4" fill="none"/>
+    <path d="M850 215 C845 195 848 165 850 135 C852 165 855 195 850 215" stroke="#8f7b54" stroke-width="4" fill="none"/>
+    <path d="M880 215 C875 200 878 175 880 145 C882 175 885 200 880 215" stroke="#8f7b54" stroke-width="4" fill="none"/>
+</svg>
+
+<div class="container">
+
+<img src="assets/Logo_poneta.png" class="logo">
+
+<h1>Tip the Chef</h1>
+
+<a class="button tip10" href="https://paypal.me/firuzabadi/10">
+🍝 Buy me a pasta (€10)
+</a>
+
+<a class="button tip20" href="https://paypal.me/firuzabadi/20">
+🥩 Buy me a steak (€20)
+</a>
+
+<a class="button tip40" href="https://paypal.me/firuzabadi/40">
+🍽️🍷 Buy me a dinner (€40)
+</a>
+
+<a class="button tipfree" href="https://paypal.me/firuzabadi">
+❤️ Choose your tip
+</a>
+
+<div class="back">
+<a href="index.html">← Back to recipes</a>
+</div>
+
+<div class="footer">
+Tips are optional, but they make the chef’s day!
+</div>
+
+</div>
+
+<script>
+    // Effetto Parallasse identico alla Home
+    const landscape = document.querySelector('.landscape');
+    window.addEventListener('scroll', () => {
+        const offset = window.scrollY;
+        landscape.style.transform = `translateY(${offset * 0.15}px)`;
+    });
+</script>
+
+</body>
+</html>
