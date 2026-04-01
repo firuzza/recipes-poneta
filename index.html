@@ -96,6 +96,8 @@ line-height:1;
 
 .button{
 display:block;
+box-sizing:border-box;
+width:100%;
 text-decoration:none;
 padding:17px;
 margin:15px 0;
@@ -103,6 +105,8 @@ border-radius:10px;
 font-size:17px;
 letter-spacing:.3px;
 transition:transform .3s ease,box-shadow .3s ease;
+border:none;
+cursor:pointer;
 }
 
 .button:hover{
@@ -144,6 +148,26 @@ margin-left:auto;
 margin-right:auto;
 }
 
+/* menu download */
+
+.menu-item{
+display:block;
+padding:14px;
+text-decoration:none;
+color:#5f503d;
+font-size:15px;
+border-bottom:1px solid #b6a789;
+font-weight:600;
+}
+
+.menu-item:last-child{
+border-bottom:none;
+}
+
+.menu-item:hover{
+background:#f4ead2;
+}
+
 </style>
 </head>
 
@@ -172,9 +196,32 @@ Grazie for cooking with us in Tuscany
 
 <div class="section">
 
-<a class="button download" href="Recipes_poneta.pdf#toolbar=0">
+<div style="position:relative; width:100%;">
+
+<button class="button download" onclick="toggleMenu()">
 📖 Download the Recipes (PDF)
-</a>
+</button>
+
+<div id="downloadMenu" style="
+display:none;
+position:absolute;
+left:0;
+right:0;
+margin:auto;
+max-width:300px;
+background:#f7edd8;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+overflow:hidden;
+z-index:10;
+">
+
+<a href="Recipes_poneta.pdf#toolbar=0" class="menu-item">Metric (g, ml)</a>
+<a href="Recipes_poneta_US.pdf#toolbar=0" class="menu-item">US / Imperial (cups, oz)</a>
+
+</div>
+
+</div>
 
 </div>
 
@@ -216,6 +263,24 @@ const offset=window.scrollY;
 
 landscape.style.transform=`translateY(${offset*0.15}px)`;
 
+});
+
+// menu toggle
+
+function toggleMenu(){
+const menu = document.getElementById("downloadMenu");
+menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+// chiusura click fuori
+
+document.addEventListener("click", function(event){
+const menu = document.getElementById("downloadMenu");
+const button = document.querySelector(".download");
+
+if (!menu.contains(event.target) && !button.contains(event.target)){
+menu.style.display = "none";
+}
 });
 
 </script>
